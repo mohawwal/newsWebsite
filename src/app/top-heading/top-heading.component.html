@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row cardBox">
+    <div *ngFor="let d of topHeaderDisplayData" class="card">
+      <img src="{{ d.urlToImage }}" width="100%" class="card-img-top" />
+      <div class="card-body">
+        <h5 class="card-title">{{ d.title }}</h5>
+        <p class="card-text">{{ d.description }}</p>
+        <a href="{{ d.url }}" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="wrapper" (scroll)="onScroll($event)">
+  <nav [ngClass]="{ hide: scrollingDown, show: !scrollingDown }">
+    <div class="header">
+      <h3>News Letter</h3>
+      <div class="menu">
+        <div (click)="onMenu()">
+          <div class="menuIcon" *ngIf="!flipMenu">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <ul class="dexMenuList">
+            <li><p routerLink="">Home</p></li>
+            <li><p routerLink="/techNews">Tech</p></li>
+            <li routerLink="/business"><p>Business</p></li>
+          </ul>
+          <div *ngIf="flipMenu" class="cancel">x</div>
+        </div>
+      </div>
+    </div>
+    <ul *ngIf="flipMenu" class="menuList">
+      <li><p routerLink="">Home</p></li>
+      <li><p routerLink="/techNews">Tech News</p></li>
+      <li routerLink="/business"><p>Business News</p></li>
+    </ul>
+  </nav>
+</div>
+<router-outlet></router-outlet>
+
+<footer>
+  <p>&copy; 2023 Newsletter <fa-icon [icon]="faGithub"></fa-icon></p>
+</footer>
